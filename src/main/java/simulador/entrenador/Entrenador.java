@@ -1,5 +1,6 @@
 package simulador.entrenador;
 
+import java.io.Serializable;
 import java.util.*;
 
 import simulador.Principal;
@@ -7,7 +8,7 @@ import simulador.pokemon.Pokemon;
 import simulador.pokemon.TipoPokemon;
 
 
-public class Entrenador { //✅
+public class Entrenador implements Serializable { 
     private String nombre;
     private static LinkedList <Pokemon> pokeLista;
     
@@ -15,7 +16,7 @@ public class Entrenador { //✅
 
     // Constructor //
 
-    public Entrenador(String nombre) { //✅
+    public Entrenador(String nombre) { 
         this.nombre = nombre;
         Entrenador.pokeLista = new LinkedList<>();
     }//cierra constructor
@@ -24,15 +25,15 @@ public class Entrenador { //✅
 
     //Getters y Setters//
 
-    public String getNombre(){ //✅
+    public String getNombre(){ 
         return this.nombre;
     }//cierra getNombre
 
-    public void setNombre (String nombre){ //✅
+    public void setNombre (String nombre){ 
         this.nombre = nombre;
     }//cierra setNombre
 
-    public LinkedList<Pokemon> getPokeLista(){ //✅
+    public LinkedList<Pokemon> getPokeLista(){ 
         return pokeLista;
     }//cierra getPokemones
  
@@ -40,11 +41,11 @@ public class Entrenador { //✅
 
     //Metodos//
     
-    public void agregarPokemon(Pokemon pokemon){ //✅
+    public void agregarPokemon(Pokemon pokemon){ 
         pokeLista.add(pokemon);
     }//cierra agregarPokemon
 
-    public void entrenarPokemon(Pokemon pokemon){ //✅
+    public void entrenarPokemon(Pokemon pokemon){ 
 
         if (pokeLista.isEmpty()) {
             System.out.println("No tienes pokemones para entrenar.");
@@ -57,7 +58,7 @@ public class Entrenador { //✅
         
     }//cierra entrenarPokemon
 
-    public static void mostrarPokemones(){ //✅
+    public static void mostrarPokemones(){ 
         for (int i = 0; i < pokeLista.size(); i++) {
             String pokeNombre = pokeLista.get(i).getNombre();
             double pokeSalud = pokeLista.get(i).getSalud();
@@ -67,7 +68,7 @@ public class Entrenador { //✅
         }//cierra for
     }//cierra mostrarPokemon
 
-    public Pokemon prepararBatalla(){ //✅
+    public Pokemon prepararBatalla(){ 
         if (pokeLista.isEmpty() != true) {
 
             System.out.println("");

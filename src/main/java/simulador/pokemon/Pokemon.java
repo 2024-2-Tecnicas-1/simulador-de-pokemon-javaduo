@@ -2,7 +2,7 @@ package simulador.pokemon;
 
 import java.io.Serializable;
 
-public abstract class Pokemon implements Serializable{
+public class Pokemon implements Serializable{
     protected String nombre;
     protected double salud;
     protected double puntosDeAtaque;
@@ -25,35 +25,35 @@ public abstract class Pokemon implements Serializable{
 
     // Getters & Setters //
 
-    public String getNombre() { //✅
+    public String getNombre() { 
         return nombre;
     }//cierra getNombre
 
-    public double getSalud() { //✅
+    public double getSalud() { 
         return salud;
     }//cierra getSalud
 
-    public double getPuntosDeAtaque() { //✅
+    public double getPuntosDeAtaque() { 
         return puntosDeAtaque;
     }//cierra getPuntosDeAtaque
 
-    public TipoPokemon getTipo() { //✅
+    public TipoPokemon getTipo() { 
         return tipo;
     }//cierra getTipo
 
-    public Estado getEstado() { //✅
+    public Estado getEstado() { 
         return estado;
     }//cierra getEstado
 
-    public void setNombre (String nombre){ //✅
+    public void setNombre (String nombre){ 
         this.nombre = nombre;
     }//cierra setNombre
 
-    public void setSalud (double salud){ //✅
+    public void setSalud (double salud){ 
         this.salud = salud;
     }//cierra setSalud
 
-    public void setPuntosDeAtaque (double puntosDeAtaque){ //✅
+    public void setPuntosDeAtaque (double puntosDeAtaque){ 
         this.puntosDeAtaque = puntosDeAtaque;
     }//cierra setSalud
 
@@ -61,13 +61,13 @@ public abstract class Pokemon implements Serializable{
 
     // Métodos //
 
-    public void atacar(Pokemon oponente) { //✅
+    public void atacar(Pokemon oponente) { 
         double saludOponente = oponente.getSalud();
         double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.getTipo());
         oponente.recibirDaño(saludOponente - (this.puntosDeAtaque * multiplicador));
     }//cierra atacar
 
-    public void recibirDaño(double daño) { //✅
+    public void recibirDaño(double daño) { 
         this.salud -= daño;
         if (this.salud <= 0) {
             this.salud = 0;
@@ -76,7 +76,7 @@ public abstract class Pokemon implements Serializable{
         }//cierra if
     }//cierra recibirDaño
 
-    public void entrenar() {//✅
+    public void entrenar() {
 
         this.puntosDeAtaque += 20;
         this.salud += 5;

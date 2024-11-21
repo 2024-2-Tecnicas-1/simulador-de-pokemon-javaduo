@@ -1,9 +1,8 @@
-
 package simulador.pokemon;
 
 public class Bellsprout extends Pokemon {
-    
-    public Bellsprout() {
-        super("Bellsprout", 50, 75, TipoPokemon.PLANTA);
+
+    public Bellsprout(String nombre, double salud, double puntosDeAtaque, TipoPokemon tipo) {
+        super(nombre, salud, puntosDeAtaque, tipo);
     }
 }

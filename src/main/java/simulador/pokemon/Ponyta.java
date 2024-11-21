@@ -1,11 +1,8 @@
-
 package simulador.pokemon;
 
+public class Ponyta extends Pokemon {
 
-public class Ponyta extends Pokemon{
-    
-    public Ponyta() {
-        super("Ponyta", 50, 85, TipoPokemon.FUEGO);
-        
-    } 
+    public Ponyta(String nombre, double salud, double puntosDeAtaque, TipoPokemon tipo) {
+        super(nombre, salud, puntosDeAtaque, tipo);
+    }
 }
